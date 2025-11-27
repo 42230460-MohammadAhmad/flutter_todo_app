@@ -127,6 +127,8 @@ class _MyHomePageState extends State<MyHomePage> {
               DropdownMenuItem(value: "Low", child: Text("Low")),
               DropdownMenuItem(value: "Medium", child: Text("Medium")),
               DropdownMenuItem(value: "High", child: Text("High")),
+               DropdownMenuItem(value: "VeryHigh", child: Text("Very High")),
+                DropdownMenuItem(value: "VeryLow", child: Text("Very Low")),
             ],
             onChanged: (value) {
               setState(() {
@@ -163,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   "priority": selectedPriority,
                   "done": false
                 });
-                newTaskText = "";
+             
               });
             },
             child: const Text(
@@ -279,6 +281,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Color getPriorityColor(String priority) {
     if (priority == "High") return Colors.red.shade700;
     if (priority == "Medium") return Colors.orange.shade700;
+    if (priority == "VeryHigh") return const Color.fromARGB(255, 255, 0, 242);
+    if (priority == "VeryLow") return const Color.fromARGB(255, 255, 251, 0);
     return Colors.green.shade700;
   }
 }
